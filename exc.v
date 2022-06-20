@@ -8,9 +8,8 @@ import os
 [typedef]
 struct C.jmp_buf {}
 
-// TODO: Handlers are retained after successful runs.
-// TODO: The realloc cause issues with libgc.
-#define try() setjmp(*(handler_stack = realloc(handler_stack, ++handler_len))) == 0
+// TODO: The realloc can cause issues with libgc.
+#define try() setjmp((handler_stack = realloc(handler_stack, ++handler_len * sizeof(jmp_buf)))[handler_len - 1]) == 0
 
 fn C.try() bool
 fn C.longjmp(env C.jmp_buf, val int)
@@ -39,6 +38,11 @@ pub fn raise(name string, msg string) {
     }
     handler_len -= 1
     C.longjmp(handler_stack[handler_len], 1)
+}
+
+pub fn end_try() {
+    if handler_len == 0 { panic("end_try without a try.") }
+    handler_len -= 1
 }
 
 [_constructor]
