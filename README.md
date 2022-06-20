@@ -8,7 +8,7 @@ Exceptions using setjmp/longjmp in V.
 This project is essentially done for the Python to V transpilation effort in [py2many](https://github.com/py2many/py2many). You can use it in your projects but using V's error handling is recommended.
 
 
-## Example
+## Example
 
 ```v
 import os
