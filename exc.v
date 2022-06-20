@@ -1,5 +1,5 @@
 [translated]
-module div72.exc
+module vexc
 
 import datatypes
 import os
