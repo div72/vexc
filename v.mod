@@ -1,7 +1,7 @@
 Module {
 	name: 'vexc'
-	description: ''
-	version: ''
-	license: ''
+	description: 'Exceptions for V.'
+	version: '0.0.0'
+	license: 'MIT'
 	dependencies: []
 }
