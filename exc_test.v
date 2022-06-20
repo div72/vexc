@@ -14,6 +14,7 @@ fn test_catch() {
         assert false
         end_try()
     } else {
+        assert get_curr_exc().name == "ZeroDivisionError"
         return
     }
     assert false

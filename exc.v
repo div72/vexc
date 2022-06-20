@@ -45,6 +45,10 @@ pub fn end_try() {
     handler_len -= 1
 }
 
+pub fn get_curr_exc() Exception {
+    return *curr_exc
+}
+
 [_constructor]
 fn raise_on_signals() {
     os.signal_opt(.fpe, fn (_ os.Signal) { raise("ArithmeticError", "SIGFPE") }) or {}
