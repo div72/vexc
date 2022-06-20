@@ -1,17 +1,12 @@
 [translated]
 module vexc
 
-import datatypes
 import os
 
 #include <setjmp.h>
 
 [typedef]
 struct C.jmp_buf {}
-
-struct JumpBuf {
-    buf C.jmp_buf
-}
 
 // TODO: Handlers are retained after successful runs.
 // TODO: The realloc cause issues with libgc.
