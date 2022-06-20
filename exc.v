@@ -1,5 +1,5 @@
 [translated]
-module exc
+module div72.exc
 
 import datatypes
 import os
