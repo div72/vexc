@@ -21,7 +21,8 @@ __global (
 )
 
 [heap]
-struct Exception {
+pub struct Exception {
+pub mut:
     name string
     msg string
 }
